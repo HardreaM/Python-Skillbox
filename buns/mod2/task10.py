@@ -6,12 +6,5 @@ def main():
     ans += s[-1]
     print(ans)
 
-    """
-    Можно через split:
-        ans = ""
-        for word in s.split():
-            ans += word[-1]
-    """
-
 if __name__ == "__main__":
     main()
