@@ -7,3 +7,4 @@ for i in range(n):
         dx, dy = -dy, dx
     x, y = x+dx, y+dy
 print(-x, -y)
+input()
