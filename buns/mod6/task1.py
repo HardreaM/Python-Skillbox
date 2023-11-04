@@ -20,7 +20,7 @@ class LinkedList:
         self.size += 1
 
     def get(self, index, returnNode=False):
-        if index < 1 or index > self.size:
+        if index < 0 or index >= self.size:
             raise Exception("IllegalArgumentException")
         counter = 1
         current_node = self.start
@@ -30,12 +30,12 @@ class LinkedList:
 
         if returnNode:
             return current_node
-        return current_node.data
+        return current_node.collection
 
     def remove(self, index):
-        if index == 1:
+        if index == 0:
             self.start = self.start.next
-        elif index == self.size:
+        elif index + 1 == self.size:
             self.end = self.get(index-1, returnNode=True)
             self.end.next = None
         else:
@@ -46,7 +46,7 @@ class LinkedList:
 
     def insert(self, index, val):
         node = Node(val)
-        if index == 1:
+        if index == 0:
             node.next = self.start
             self.start = node
         else:
